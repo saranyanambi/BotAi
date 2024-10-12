@@ -1,0 +1,26 @@
+.form-wrapper{
+    display: flex;
+    gap:1rem;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+.form-container{
+    display: flex;
+    gap: 1rem;
+    flex: 1;
+}
+.form-container input{
+    flex: 1;
+    width: 100px;
+    flex-shrink: 2;
+}
+.btn{
+    background: linear-gradient(0deg, #D7C7F4, #D7C7F4),
+    linear-gradient(0deg, #D7C7F4, #D7C7F4),
+    linear-gradient(0deg, #D7C7F4, #D7C7F4),
+    linear-gradient(0deg, #D7C7F4, #D7C7F4);
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+
+}

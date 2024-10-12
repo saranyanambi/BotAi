@@ -1,0 +1,35 @@
+.sidebar-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+    width: 20vw;
+    
+}
+.sidebar-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: linear-gradient(0deg, #D7C7F4, #D7C7F4),
+linear-gradient(0deg, #D7C7F4, #D7C7F4),
+linear-gradient(0deg, #D7C7F4, #D7C7F4),
+linear-gradient(0deg, #D7C7F4, #D7C7F4);
+
+}
+.bot_icon{
+    border-radius: 35%;
+    width: 25px;
+}
+
+.past-convo{
+    height: 2rem;
+    border: none;
+    background: linear-gradient(0deg, #D7C7F4, #D7C7F4),
+    linear-gradient(0deg, #D7C7F4, #D7C7F4),
+    linear-gradient(0deg, #D7C7F4, #D7C7F4),
+    linear-gradient(0deg, #D7C7F4, #D7C7F4);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    
+}
+
