@@ -16,10 +16,27 @@ function App() {
   const chatWithBot=(userMsg,botMsg)=>{
       setCurrentChat([...currentChat,userMsg,botMsg]);
   }
+
+  const updateComments=(id,comment)=>{
+    setCurrentChat(prev=>{
+      return prev.map(item=>{
+        console.log(item)
+        if(item.id==id)
+        {
+          return{
+            ...item,
+            comments:comment
+          }
+          
+        }
+        return item
+      })
+    })
+  }
   return (
     <div className="App">
         <Sidebar/>
-        <BotBody sidebarOn={sidebarOn} clearChat={clearChat} pastConvo={pastConvo} handleSideBar={handleSideBar} currentChat={currentChat} chatWithBot={chatWithBot}/>
+        <BotBody sidebarOn={sidebarOn} clearChat={clearChat} pastConvo={pastConvo} handleSideBar={handleSideBar} currentChat={currentChat} chatWithBot={chatWithBot} updateComments={updateComments}/>
     </div>
   );
 }
