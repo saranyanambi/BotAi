@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./ChatCard.css";
-import FeedbackForm from "../FeedbackForm/FeedbackForm";
 import Modal from "react-modal";
 import Rating from "@mui/material/Rating";
 
