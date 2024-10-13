@@ -10,7 +10,8 @@ import dislike from "../../assets/thumbsDown.png";
 import ChatCard from "../ChatCard/ChatCard";
 import feedback from "../../assets/feedback.png";
 const ChatBody=(props)=>{
-    const {clearChat,chatWithBot,currentChat}=props;
+    const {clearChat,chatWithBot,currentChat,updateComments}=props;
+    console.log("chat:"+ currentChat);
     const handleForm=(text)=>{
 
             const botresponse=findQuestion(SampleData,text)
@@ -20,7 +21,7 @@ const ChatBody=(props)=>{
                 icon:you_icon,
                 name:"you",
                 msg:text,
-                id:`${Date.now()}`,
+                id:`user-${Date.now()}`,
                 time:time()
 
             }
@@ -29,11 +30,12 @@ const ChatBody=(props)=>{
                 icon:bot_icon,
                 name:"Soul AI",
                 msg:botresponse?.[0]?.response||"can you provide more infomation about your query?",
-                id:`${Date.now()}`,
+                id:`bot-${Date.now()}`,
                 like:like,
                 dislike:dislike,
                 feedback:feedback,
-                time:time()
+                time:time(),
+                comments:""
             }
                 chatWithBot(userMsg,botmsg);
     }
@@ -41,14 +43,17 @@ const ChatBody=(props)=>{
     const displayCards=()=>{
         if(!currentChat || !currentChat.length)
                 return [];
+
+        console.log("chat:"+ currentChat[0]);
         let customClass
         return currentChat.map((card)=>{
+            console.log(card)
             const {icon,name,msg,like,dislike,id,time,feedback}=card;
             if(name=="Soul AI")
                     customClass="botCard";
             else
                 customClass="userCard";
-            return <ChatCard icon={icon} name={name} msg={msg} like={like} dislike={dislike} id={id} customClass={customClass} time={time} feedback={feedback}/>
+            return <ChatCard icon={icon} name={name} msg={msg} like={like} dislike={dislike} id={id} customClass={customClass} time={time} feedback={feedback} currentChat={currentChat} updateComments={updateComments}/>
         })
     }
     return(
