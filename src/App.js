@@ -17,15 +17,21 @@ function App() {
       setCurrentChat([...currentChat,userMsg,botMsg]);
   }
 
-  const updateComments=(id,comment)=>{
+  const newChat=()=>{
+    setCurrentChat([]);
+    setPastConvo(false)
+  }
+  const updateComments=(id,comment,name)=>{
+    console.log(name)
     setCurrentChat(prev=>{
       return prev.map(item=>{
         console.log(item)
-        if(item.id==id)
+        if(item.id==id && item.name==name)
         {
           return{
             ...item,
-            comments:comment
+            comments:comment,
+            
           }
           
         }
@@ -33,10 +39,30 @@ function App() {
       })
     })
   }
+
+  const updateRating=(id,rating)=>{
+    console.log("hi"+rating)
+    setCurrentChat(prev=>{
+      return prev.map(item=>{
+        console.log(item)
+        if(item.id==id)
+        {
+          return{
+            ...item,
+            rating:rating,
+            
+          }
+          
+        }
+        return item
+      })
+    })
+  }
+
   return (
     <div className="App">
-        <Sidebar/>
-        <BotBody sidebarOn={sidebarOn} clearChat={clearChat} pastConvo={pastConvo} handleSideBar={handleSideBar} currentChat={currentChat} chatWithBot={chatWithBot} updateComments={updateComments}/>
+        <Sidebar handlePastConvo={handlePastConvo} sidebarOn={sidebarOn} handleSideBar={handleSideBar} newChat={newChat}/>
+        <BotBody sidebarOn={sidebarOn} clearChat={clearChat} pastConvo={pastConvo} handleSideBar={handleSideBar} currentChat={currentChat} chatWithBot={chatWithBot} updateComments={updateComments} updateRating={updateRating}/>
     </div>
   );
 }
