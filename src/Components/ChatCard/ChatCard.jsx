@@ -66,7 +66,7 @@ const ChatCard=(props)=>{
                             <>
                         <img src={feedback} alt="feedback" className="feedback" onClick={()=>handleFeedbackOpen()}/>
                         <img src={like} alt="img" onClick={()=>handleRating()}/>
-                        <img src={dislike} alt="dislike"/>
+                        
                         
                         </>)}
                     </div>}
@@ -79,11 +79,12 @@ const ChatCard=(props)=>{
                 <div className="time-rate">
            
                         <div className="time">{time}</div>
-                        
+                           { rating>0 &&
                                 <Rating
                                 value={rating}
                                 readOnly
                                 />
+                           }
                         </div>
        
        </>)
@@ -112,7 +113,7 @@ const ChatCard=(props)=>{
         </>
     )}
 
-         {convo && name=="Soul AI" && <div>Feedback: {comment}</div>} 
+         {convo && name=="Soul AI" && comment.length>0 && <div>Feedback: {comment}</div>} 
 
          <div>{userFeedback.length>0?userFeedback:""}</div>
 
