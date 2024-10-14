@@ -6,7 +6,13 @@ const BotBody=(props)=>{
     const {sidebarOn,clearChat,pastConvo,handleSideBar,currentChat,chatWithBot,updateComments,updateRating}=props;
     return(
         <div className="BotBody-container">
-           
+           <div className='BotBodyHead'>
+                {
+                    !sidebarOn ? <img onClick={handleSideBar} src={menu_icon} alt='menu icon' /> : null
+                }
+                <h1>Bot AI</h1>
+                
+            </div>
             <div>
                { pastConvo?<PastConvo/>:<ChatBody currentChat={currentChat} chatWithBot={chatWithBot} clearChat={clearChat} updateComments={updateComments} updateRating={updateRating}/>}
             </div>
