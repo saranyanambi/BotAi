@@ -248,6 +248,26 @@
       "id": 50,
       "question": "How do you stay updated with the latest technology trends?",
       "response": "Staying updated involves following industry news, participating in developer communities, attending conferences and workshops, taking online courses, reading technical blogs and publications, and experimenting with new technologies and tools."
+    },
+    {
+      "id": 51,
+      "question": "Hi,What is the weather",
+      "response": "It is cloudy with the chance if meatballs!"
+    },
+    {
+      "id": 52,
+      "question": "Hi, what is my location?",
+      "response": "I am 99% sure it is not Mars."
+    },
+    {
+      "id": 53,
+      "question": "what is the temperature",
+      "response": " 'Temperature' by Sean Paul. It's a dancehall and reggae fusion song by Jamaican artist Sean Paul, released in 2005 as the lead single from his third studio album, 'The Trinity.'"
+    },
+    {
+      "id": 54,
+      "question": "Hi How are You",
+      "response": "I am fine, thanks for asking. How are you?"
     }
   ]
   
