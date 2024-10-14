@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Form.css";
 const Form=(props)=>{
-    const {handleForm}=props;
+    const {handleForm,handleSave}=props;
     const [query,setQuery]=useState("");
     const handleSubmit=(e)=>{
         e.preventDefault()
@@ -14,7 +14,7 @@ const Form=(props)=>{
         <input name="question" onChange={e=>setQuery(e.target.value)}/>
         <button type="submit" className="btn">Ask</button>
     </form>
-    <button type="submit" className="btn">Save</button>
+    <button type="submit" className="btn" onClick={handleSave}>Save</button>
     </div>
     )
 }
