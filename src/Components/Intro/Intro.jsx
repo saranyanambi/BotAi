@@ -1,7 +1,8 @@
 import IntroCard from "../IntroCard/IntroCard";
 import bot_icon from "../../assets/bot_icon.png";
 import "./Intro.css";
-const Intro=()=>{
+const Intro=(props)=>{
+    const {handleForm}=props;
         const text1="Hi,What is the weather";
         const text2="Hi, What is my Location";
         const text3="What is the temperature";
@@ -18,10 +19,10 @@ const Intro=()=>{
            
         </div>
             <div className="intro-cards">
-                <IntroCard text={text1} subtext={subtext}/>
-                <IntroCard text={text2} subtext={subtext}/>
-                <IntroCard text={text3} subtext={subtext}/>
-                <IntroCard text={text4} subtext={subtext}/>
+                <IntroCard text={text1} subtext={subtext} handleForm={handleForm}/>
+                <IntroCard text={text2} subtext={subtext} handleForm={handleForm}/>
+                <IntroCard text={text3} subtext={subtext} handleForm={handleForm}/>
+                <IntroCard text={text4} subtext={subtext} handleForm={handleForm}/>
             </div>
             </div>
         )
