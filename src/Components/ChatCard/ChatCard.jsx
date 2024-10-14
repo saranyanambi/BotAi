@@ -4,15 +4,15 @@ import Modal from "react-modal";
 import Rating from "@mui/material/Rating";
 
 const ChatCard=(props)=>{
-    const {icon,name,msg,like,dislike,id,customClass,time,feedback,currentChat,updateComments}=props;
+    const {icon,name,msg,like,dislike,id,customClass,time,feedback,currentChat,updateComments,updateRating,comment,rating,convo}=props;
 
-    console.log(id);
+    // console.log(id);
     const [showFeedback,setShowfeedback]=useState(false);
     const [userFeedback,setUsefeedback]=useState("")
-    console.log(customClass);
+    // console.log(customClass);
     const [isModelOpen,setIsModelOpen]=useState(false);
     const [showRating,setShowRating]=useState(false)
-    const [rating,setRating]=useState(0);
+    const [ratings,setRating]=useState(0);
 
     const modalStyle={
         content:{
@@ -35,7 +35,7 @@ const ChatCard=(props)=>{
         setIsModelOpen(false)
         setShowfeedback(false)
         const newComment=userFeedback;
-        updateComments(id,newComment)
+        updateComments(id,newComment,name)
 
         console.log(feedback,"submit");
     }
@@ -46,45 +46,77 @@ const ChatCard=(props)=>{
     }
     const handleRating=()=>{
         setShowRating(true)
-        setRating(prev=>Math.min(prev+1,5))
+        // console.log(rating)
+       
         
     }
     return(
         <div className={`chatcard-container ${customClass}`}>
-            <span>
+            <div>
                 <img src={icon} alt={`${name}`} className="img"/>
-            </span>
+            </div>
+            <div className="chatCard-text-container">
             <span className="chatcard-text">
             <span className="chatcard-name">{name}</span>
             <div className="msg-container">
             <span className="message">{msg}
-            <div className="interaction_icon">
-            {name=="Soul AI" && (
+                    {!convo &&   
+                    <div className="interaction_icon">
+                        {name=="Soul AI" && (
+                            <>
+                        <img src={feedback} alt="feedback" className="feedback" onClick={()=>handleFeedbackOpen()}/>
+                        <img src={like} alt="img" onClick={()=>handleRating()}/>
+                        <img src={dislike} alt="dislike"/>
+                        
+                        </>)}
+                    </div>}
+            </span>
+            </div>
+            </span>
+            
+            {convo && name=="Soul AI" ? (
                 <>
-            <img src={feedback} alt="feedback" className="feedback" onClick={()=>handleFeedbackOpen()}/>
-            <img src={like} alt="img" onClick={()=>handleRating()}/>
-            <img src={dislike} alt="dislike"/>
-            
-            </>)}
-            </div>
-            </span>
-            </div>
-            </span>
-            
-            
+                <div className="time-rate">
            
+                        <div className="time">{time}</div>
+                        
+                                <Rating
+                                value={rating}
+                                readOnly
+                                />
+                        </div>
+       
+       </>)
+       :
+            (
            
-            <span>{time}</span>
-        
-            <div>{userFeedback.length>0?userFeedback:""}</div>
-            {showRating &&
-            <Rating
-            value={rating}
-            onChange={(e,newValue)=>{
-                setRating(newValue)
-            }}
-            precision={1}/>
-        }
+           <>
+           <div className="time-rate">
+           
+            <div className="time">{time}</div>
+                    {showRating &&
+                        <Rating
+                                    value={ratings}
+                                    onChange={(e,newValue)=>{
+                                        console.log(newValue)
+                                        setRating(newValue)
+                                        updateRating(id,newValue);
+                                        
+                                    }}
+                                    precision={1}
+                            />
+                }
+
+            </div>
+
+        </>
+    )}
+
+         {convo && name=="Soul AI" && <div>Feedback: {comment}</div>} 
+
+         <div>{userFeedback.length>0?userFeedback:""}</div>
+
+         </div>
             <Modal
             isOpen={isModelOpen}
             onRequestClose={()=>setIsModelOpen(false)}

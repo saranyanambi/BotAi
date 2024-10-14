@@ -1,14 +1,26 @@
-.chatCard-container{
+.chatcard-container{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     border-radius: 0.5rem;
+    gap: 1rem;
+   
+}
+.chatCard-text-container{
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+    padding: 0.5rem;
 }
 .msg-container{
     cursor: pointer;
     position: relative;
     width: 100%;
 
+}
+.time-rate{
+    display: flex;
+    gap:2rem;
 }
 .img{
     border-radius: 50%;
@@ -23,6 +35,12 @@
 
 .chatcard-name{
     font-size: 700;
+    font-family: Ubuntu;
+font-size: 16px;
+font-weight: 700;
+line-height: 18.38px;
+text-align: left;
+
     text-transform: capitalize;
 }
 .botCard .message{
@@ -30,10 +48,25 @@
     animation: message 500ms 2500ms forwards;
     cursor: pointer;
 }
+.userCard{
+    box-shadow: 4px 4px 4px 4px #00000040;
+    margin-bottom: 1rem;
+}
 .botCard{
     opacity: 0;
     animation: riseUp 250ms 250ms forwards;
-    box-shadow: 0px 4px 4px 0px #00000040;
+    box-shadow: 4px 4px 4px 4px #00000040;
+    margin-bottom: 1rem;
+
+}
+.time{
+    font-family: Open Sans;
+font-size: 12px;
+font-weight: 400;
+line-height: 16.34px;
+text-align: left;
+color: rgba(0, 0, 0, 0.62);
+
 
 }
 .botCard .chatCard-container{
@@ -76,7 +109,7 @@
     right: 50px;
    
 }
-.msg-container:hover .interaction_icon{
+.chatcard-container:hover .interaction_icon{
     display: flex;
     gap:1rem;
    
