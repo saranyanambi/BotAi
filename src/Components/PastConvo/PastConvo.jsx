@@ -15,7 +15,8 @@ const PastConvo = () => {
             if (localCovo) {
                 const parsedConvos = JSON.parse(localCovo);
                 setConvos(parsedConvos);
-                setFilteredConvo(parsedConvos); 
+                setFilteredConvo(parsedConvos);
+                console.log(parsedConvos) 
             }
         };
         fetchLocal();
@@ -37,7 +38,7 @@ const PastConvo = () => {
     const displayCards = (filteredConvo) => filteredConvo.map(item => {
         const { id, conversation } = item;
 
-        return <ConversationCard key={id} conversation={conversation} />;
+        return conversation.length>0 && <ConversationCard key={id} conversation={conversation} />;
     });
 
     return (
