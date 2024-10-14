@@ -11,7 +11,7 @@ const Form=(props)=>{
     return(
     <div className="form-wrapper">
     <form className="form-container" onSubmit={handleSubmit}>
-        <input name="question" onChange={e=>setQuery(e.target.value)}/>
+        <input name="question" value={query} onChange={e=>setQuery(e.target.value)}/>
         <button type="submit" className="btn">Ask</button>
     </form>
     <button type="submit" className="btn" onClick={handleSave}>Save</button>
