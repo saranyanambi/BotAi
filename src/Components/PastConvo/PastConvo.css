@@ -1,0 +1,29 @@
+.pastconvo-wrapper{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.pastconvo-container{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow-y: auto;
+    gap: 1rem;
+    max-height: 400px;
+}
+.pastconvo-wrapper h3{
+    font-size: 28px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.pastconvo-wrapper p{
+    font-size: 20px;
+    font-weight: 400;
+    color: black;
+}
+.select{
+    text-align: center;
+    padding: 1rem;
+}
