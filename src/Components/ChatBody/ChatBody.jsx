@@ -83,7 +83,7 @@ const ChatBody=(props)=>{
     return(
         <div className="chatbody-container">
 
-        <h1 className="bot">Bot Ai</h1>
+      
         {
             currentChat?.length?
             <>
