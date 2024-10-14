@@ -1,8 +1,9 @@
 .chatbody-container{
-    /* background: linear-gradient(180deg, rgba(215, 199, 244, 0.2) 0%, rgba(151, 133, 186, 0.2) 100%); */
+    background: linear-gradient(180deg, rgba(215, 199, 244, 0.2) 0%, rgba(151, 133, 186, 0.2) 100%);
     display: flex;
     flex-direction: column;
-    
+   
+   
 
 }
 .bot{
@@ -13,5 +14,10 @@ font-weight: 700;
 line-height: 32.17px;
 text-align: left;
 
+}
+.card-wrapper{
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    height: 400px;
 }
 
