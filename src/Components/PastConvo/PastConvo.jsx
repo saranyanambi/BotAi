@@ -16,7 +16,6 @@ const PastConvo = () => {
                 const parsedConvos = JSON.parse(localCovo);
                 setConvos(parsedConvos);
                 setFilteredConvo(parsedConvos);
-                console.log(parsedConvos) 
             }
         };
         fetchLocal();
@@ -29,7 +28,6 @@ const PastConvo = () => {
         if (selectedStar) {
             const res = fetchStar(selectedStar, convos);
             setFilteredConvo(res);
-            console.log(res)
         } else {
             setFilteredConvo(convos); 
         }
