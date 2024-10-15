@@ -4,6 +4,9 @@
     justify-content: flex-start;
     border-radius: 0.5rem;
     gap: 1rem;
+    padding: 1rem;
+   margin: auto;
+
    
 }
 .chatCard-text-container{
@@ -79,6 +82,7 @@ color: rgba(0, 0, 0, 0.62);
 .textarea{
     height: 100px;
     width: 100%;
+    box-sizing: border-box;
 }
 .btn-container{
     display: flex;
@@ -133,4 +137,16 @@ color: rgba(0, 0, 0, 0.62);
         opacity: 1;
     }
 }
+
+@media screen and (max-width:750px){
+    .btn-container{
+        flex-direction: column;
+        align-items: center;
+       
+    }
+    .btn-container button{
+        padding: .5rem;
+    }
+}
+
 

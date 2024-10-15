@@ -6,10 +6,9 @@ import Rating from "@mui/material/Rating";
 const ChatCard=(props)=>{
     const {icon,name,msg,like,dislike,id,customClass,time,feedback,currentChat,updateComments,updateRating,comment,rating,convo}=props;
 
-    // console.log(id);
+   
     const [showFeedback,setShowfeedback]=useState(false);
     const [userFeedback,setUsefeedback]=useState("")
-    // console.log(customClass);
     const [isModelOpen,setIsModelOpen]=useState(false);
     const [showRating,setShowRating]=useState(false)
     const [ratings,setRating]=useState(0);
@@ -21,9 +20,9 @@ const ChatCard=(props)=>{
             right:"auto",
             bottom:"auto",
             transform:"translate("-50%","-50%")",
-            width:"80%",
+            width:"40%",
             maxWidth:"500px",
-            background:"rgba(255,255,255,0.6)",
+            background:"rgba(255,255,255,0.8)",
             borderRadius:"1rem",
             
         }
@@ -36,8 +35,6 @@ const ChatCard=(props)=>{
         setShowfeedback(false)
         const newComment=userFeedback;
         updateComments(id,newComment,name)
-
-        console.log(feedback,"submit");
     }
 
     const handleFeedbackOpen=()=>{
@@ -46,7 +43,7 @@ const ChatCard=(props)=>{
     }
     const handleRating=()=>{
         setShowRating(true)
-        // console.log(rating)
+       
        
         
     }
