@@ -39,17 +39,5 @@ export const fetchStar=(star,convo)=>{
         })
 }
 
-// export const fetchStar = (rating,conversations) => {
-//     console.log(conversations)
-//     return conversations
-//     .filter(conv => 
-//         conv.conversation.some(msg => msg.rating === rating) // Filter conversations
-//     )
-//     .map(conv => ({
-//         ...conv,
-//         conversation: conv.conversation.filter(msg => msg.rating === rating) // Keep only messages with selected rating
-//     }));
-        
-// };
 
 
