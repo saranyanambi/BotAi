@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
 import Sidebar from './Components/SideBar/Sidebar';
-import ChatBody from './Components/ChatBody/ChatBody';
 import { useState } from 'react';
 import BotBody from './Components/BotBody/BotBody';
 
