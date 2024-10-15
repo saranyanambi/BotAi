@@ -13,3 +13,10 @@
     height: 400px;
 }
 
+
+@media screen and (max-width:400px) {
+    .chatbody-container{
+        overflow-y: auto;
+        height: 80vh;
+    }
+}

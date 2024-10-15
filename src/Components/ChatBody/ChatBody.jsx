@@ -12,7 +12,6 @@ import feedback from "../../assets/feedback.png";
 import { useEffect } from "react";
 const ChatBody=(props)=>{
     const {clearChat,chatWithBot,currentChat,updateComments,updateRating}=props;
-    // console.log("chat:"+ currentChat);
 
     useEffect(()=>{
         if(!currentChat)
@@ -22,7 +21,6 @@ const ChatBody=(props)=>{
     const handleForm=(text)=>{
 
             const botresponse=findQuestion(SampleData,text)
-            console.log(botresponse);
 
             const userMsg={
                 icon:you_icon,
@@ -51,11 +49,8 @@ const ChatBody=(props)=>{
     const displayCards=()=>{
         if(!currentChat || !currentChat.length)
                 return [];
-
-        // console.log("chat:"+ currentChat[0]);
         let customClass
         return currentChat.map((card)=>{
-            // console.log(card)
             const {icon,name,msg,like,dislike,id,time,feedback}=card;
             if(name=="Soul AI")
                     customClass="botCard";
@@ -66,9 +61,7 @@ const ChatBody=(props)=>{
     }
 
     const scrolltobottom=()=>{
-        // console.log("hi")
         var container=document.getElementById("card-wrapper");
-        // console.log(container)
         if(!container)
             return
         container.scrollTop=container.scrollHeight;
