@@ -2,10 +2,11 @@ import { useState } from "react";
 import "./ChatCard.css";
 import Modal from "react-modal";
 import Rating from "@mui/material/Rating";
+import { useTheme } from "../Context/ThemeContext";
 
 const ChatCard=(props)=>{
     const {icon,name,msg,like,dislike,id,customClass,time,feedback,currentChat,updateComments,updateRating,comment,rating,convo}=props;
-
+    const {theme}=useTheme();
    
     const [showFeedback,setShowfeedback]=useState(false);
     const [userFeedback,setUsefeedback]=useState("")
@@ -48,7 +49,7 @@ const ChatCard=(props)=>{
         
     }
     return(
-        <div className={`chatcard-container ${customClass}`}>
+        <div className={`chatcard-container ${customClass} ${theme}`}>
             <div>
                 <img src={icon} alt={`${name}`} className="img"/>
             </div>

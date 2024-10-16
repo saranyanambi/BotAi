@@ -9,6 +9,13 @@
 
    
 }
+
+.chatcard-container.dark{
+    background: rgb(92,58,147);
+    background: linear-gradient(90deg, rgba(92,58,147,1) 28%, rgba(92,58,147,1) 100%);
+    color: white;
+    
+}
 .chatCard-text-container{
     display: flex;
     flex-direction: column;
@@ -62,7 +69,7 @@ text-align: left;
     margin-bottom: 1rem;
 
 }
-.time{
+.time .light{
     font-family: Open Sans;
 font-size: 12px;
 font-weight: 400;
@@ -72,6 +79,9 @@ color: rgba(0, 0, 0, 0.62);
 
 
 }
+.time .dark{
+    color: white;
+}
 .botCard .chatCard-container{
     position: relative;
 
@@ -79,6 +89,7 @@ color: rgba(0, 0, 0, 0.62);
 .feedback{
     width: 20px;
 }
+
 .textarea{
     height: 100px;
     width: 100%;
