@@ -3,11 +3,13 @@ import './App.css';
 import Sidebar from './Components/SideBar/Sidebar';
 import { useState } from 'react';
 import BotBody from './Components/BotBody/BotBody';
+import { useTheme } from './Components/Context/ThemeContext';
 
 function App() {
   const [sidebarOn,setSidebaron]=useState(false);
   const [currentChat,setCurrentChat]=useState([]);
   const [pastConvo,setPastConvo]=useState(false);
+  const {theme,toggleTheme}=useTheme()
 
   const clearChat=()=>setCurrentChat([]);
   const handlePastConvo=()=>setPastConvo(!pastConvo);
@@ -21,7 +23,6 @@ function App() {
     setPastConvo(false)
   }
   const updateComments=(id,comment,name)=>{
-    console.log(name)
     setCurrentChat(prev=>{
       return prev.map(item=>{
         console.log(item)
@@ -40,7 +41,6 @@ function App() {
   }
 
   const updateRating=(id,rating)=>{
-    console.log("hi"+rating)
     setCurrentChat(prev=>{
       return prev.map(item=>{
         console.log(item)
@@ -58,8 +58,10 @@ function App() {
     })
   }
 
+
   return (
-    <div className="App">
+    <div className={`App ${theme}`}>
+        <button onClick={toggleTheme} className='toggle-btn'>Change to {theme=="dark"? "light" :"dark"}</button>
         <Sidebar handlePastConvo={handlePastConvo} sidebarOn={sidebarOn} handleSideBar={handleSideBar} newChat={newChat}/>
         <BotBody sidebarOn={sidebarOn} clearChat={clearChat} pastConvo={pastConvo} handleSideBar={handleSideBar} currentChat={currentChat} chatWithBot={chatWithBot} updateComments={updateComments} updateRating={updateRating}/>
     </div>
