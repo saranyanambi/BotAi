@@ -2,6 +2,13 @@
   width: 100vw;
   display: flex;
   height: 100vh;
+  position:relative;
+}
+.toggle-btn{
+  position: absolute;
+  right: 10%;
+  top: 5%;  
+  z-index:10;
 }
 /* 
 .App-logo {
@@ -38,3 +45,14 @@
     transform: rotate(360deg);
   }
 } */
+
+.App.light {
+  background: linear-gradient(180deg, rgba(215, 199, 244, 0.2) 0%, rgba(151, 133, 186, 0.2) 100%);
+  color: black;
+}
+
+/* Dark Theme */
+.App.dark {
+background-color: black;
+color: white;
+}
