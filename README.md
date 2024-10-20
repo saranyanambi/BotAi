@@ -1,3 +1,20 @@
+# PROJECT
+BOT AI is to implement an application where the user can chat with an AI model. Beyond
+this, the user should be able to give some feedback and like and dislike the Ai response at each stage of the conversation.
+
+# Tech used
+HTML
+CSS
+REACT
+
+# Reason for Tech used
+
+Why i am using the react in my application means react it is not render the whole application while i made changes in my application it is render the only the changed part of the application because it maintain the virtual Dom .
+
+# Trades-off
+
+while i am change in to dark mode there might be issue with choosing the feedback or giving te ratings..
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
