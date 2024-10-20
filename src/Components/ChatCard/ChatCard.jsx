@@ -64,7 +64,7 @@ const ChatCard=(props)=>{
                             <>
                         <img src={feedback} alt="feedback" className="feedback" onClick={()=>handleFeedbackOpen()}/>
                         <img src={like} alt="img" onClick={()=>handleRating()}/>
-                        
+                        <img src={dislike} alt="img" onClick={()=>handleRating()}/>
                         
                         </>)}
                     </div>}
