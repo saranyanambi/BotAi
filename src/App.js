@@ -23,6 +23,7 @@ function App() {
     setPastConvo(false)
   }
   const updateComments=(id,comment,name)=>{
+    console.log(currentChat)
     setCurrentChat(prev=>{
       return prev.map(item=>{
         console.log(item)
